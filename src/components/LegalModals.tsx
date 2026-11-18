@@ -49,3 +49,4 @@ export function LegalModal({ isOpen, onClose, title, children }: ModalProps) {
     </div>
   );
 }
+

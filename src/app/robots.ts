@@ -10,3 +10,4 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: "https://www.wembley-minicabs.co.uk/sitemap.xml",
   };
 }
+

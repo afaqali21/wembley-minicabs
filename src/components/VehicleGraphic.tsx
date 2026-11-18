@@ -370,3 +370,4 @@ export default function VehicleGraphic({ type, className = "w-full h-48" }: Vehi
       return null;
   }
 }
+
