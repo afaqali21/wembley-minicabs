@@ -143,7 +143,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://www.minicabs.co.uk/new-booking"
+                    href="https://www.minicabs.co.uk/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-[#7bc010] transition-colors font-bold text-[#7bc010]"

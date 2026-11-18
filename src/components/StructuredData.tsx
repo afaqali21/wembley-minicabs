@@ -86,7 +86,7 @@ export default function StructuredData() {
         name: "How can I book a taxi in Wembley?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "You can book your Wembley minicab online via our website at https://www.minicabs.co.uk/new-booking, call our 24/7 booking line on 0208 204 4444, or message our dispatch team directly on WhatsApp at 0208 204 4444.",
+          text: "You can book your Wembley minicab online via our website at https://www.minicabs.co.uk/, call our 24/7 booking line on 0208 204 4444, or message our dispatch team directly on WhatsApp at 0208 204 4444.",
         },
       },
       {

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Phone, MessageSquare, Car, Menu, X, Shield, Clock } from "lucide-react";
+import { Phone, MessageSquare, Car, Menu, X, Shield, Clock, ExternalLink } from "lucide-react";
 import { trackCallClick, trackWhatsAppClick, trackBookingClick } from "./Analytics";
 
 export default function Header() {
@@ -126,15 +126,16 @@ export default function Header() {
               </div>
             </a>
 
-            {/* Book Now Button */}
+            {/* Book Now Button -> minicabs.co.uk */}
             <a
-              href="https://www.minicabs.co.uk/new-booking"
+              href="https://www.minicabs.co.uk/"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackBookingClick("Header")}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#7bc010] hover:bg-[#6ea80e] text-white font-bold text-sm shadow-md shadow-[#7bc010]/20 hover:shadow-lg transition-all"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#7bc010] hover:bg-[#6ea80e] text-white font-bold text-sm shadow-md shadow-[#7bc010]/20 hover:shadow-lg transition-all cursor-pointer"
             >
               <span>Book Now</span>
+              <ExternalLink className="w-3.5 h-3.5 opacity-80" />
             </a>
           </div>
 
@@ -198,7 +199,7 @@ export default function Header() {
                   <span>Chat on WhatsApp</span>
                 </a>
                 <a
-                  href="https://www.minicabs.co.uk/new-booking"
+                  href="https://www.minicabs.co.uk/"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => {
@@ -208,7 +209,7 @@ export default function Header() {
                   className="w-full py-3 px-4 rounded-xl bg-[#7bc010] text-white font-bold text-center flex items-center justify-center gap-2"
                 >
                   <Car className="w-4 h-4" />
-                  <span>Book Your Taxi Online</span>
+                  <span>Book Online at Minicabs.co.uk</span>
                 </a>
               </div>
             </div>
@@ -216,7 +217,7 @@ export default function Header() {
         )}
       </header>
 
-      {/* Fixed Bottom CTA Bar on Mobile as requested in prompt */}
+      {/* Fixed Bottom CTA Bar on Mobile */}
       <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200 py-2.5 px-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] sm:hidden">
         <div className="grid grid-cols-3 gap-2">
           {/* Call */}
@@ -243,18 +244,17 @@ export default function Header() {
 
           {/* Book Now */}
           <a
-            href="https://www.minicabs.co.uk/new-booking"
+            href="https://www.minicabs.co.uk/"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackBookingClick("Bottom Bar")}
             className="flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-[#7bc010] hover:bg-[#6ea80e] text-white active:scale-95 transition-all text-center shadow-sm"
           >
             <Car className="w-4 h-4 mb-0.5" />
-            <span className="text-[11px] font-bold">Book Now</span>
+            <span className="text-[11px] font-bold">Book Online</span>
           </a>
         </div>
       </div>
     </>
   );
 }
-

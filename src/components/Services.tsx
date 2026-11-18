@@ -196,7 +196,7 @@ export default function Services() {
                     {service.route}
                   </span>
                   <a
-                    href="https://www.minicabs.co.uk/new-booking"
+                    href="https://www.minicabs.co.uk/"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackBookingClick(`Service - ${service.title}`)}
@@ -234,7 +234,7 @@ export default function Services() {
               Call 0208 204 4444
             </a>
             <a
-              href="https://www.minicabs.co.uk/new-booking"
+              href="https://www.minicabs.co.uk/"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackBookingClick("Services Banner")}

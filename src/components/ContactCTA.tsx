@@ -44,7 +44,7 @@ export default function ContactCTA() {
             <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
               {/* BOOK ONLINE */}
               <a
-                href="https://www.minicabs.co.uk/new-booking"
+                href="https://www.minicabs.co.uk/"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackBookingClick("Contact CTA Section")}

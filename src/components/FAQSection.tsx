@@ -11,7 +11,7 @@ export default function FAQSection() {
     {
       question: "How can I book a taxi in Wembley?",
       answer:
-        "You can book your Wembley minicab directly online through our secure booking engine at www.minicabs.co.uk/new-booking. Alternatively, call our 24/7 London control centre on 0208 204 4444 or send a message to our WhatsApp booking desk at 0208 204 4444.",
+        "You can book your Wembley minicab directly online through our website at www.minicabs.co.uk. Alternatively, call our 24/7 London control centre on 0208 204 4444 or send a message to our WhatsApp booking desk at 0208 204 4444.",
     },
     {
       question: "Do you provide Wembley to Heathrow Airport transfers?",

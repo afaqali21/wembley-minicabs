@@ -99,7 +99,7 @@ export default function AboutSection() {
             {/* Action buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-4">
               <a
-                href="https://www.minicabs.co.uk/new-booking"
+                href="https://www.minicabs.co.uk/"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackBookingClick("About Section Button")}

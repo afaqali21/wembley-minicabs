@@ -212,7 +212,7 @@ export default function VehicleOptions() {
               {/* Bottom Action */}
               <div className="p-6 pt-0">
                 <a
-                  href="https://www.minicabs.co.uk/new-booking"
+                  href="https://www.minicabs.co.uk/"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackBookingClick(`Vehicle - ${vehicle.name}`)}

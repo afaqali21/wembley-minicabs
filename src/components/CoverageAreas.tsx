@@ -187,9 +187,7 @@ export default function CoverageAreas() {
 
             <div className="pt-2">
               <a
-                href={`https://www.minicabs.co.uk/new-booking?pickup=${encodeURIComponent(
-                  currentAreaInfo.name
-                )}`}
+                href="https://www.minicabs.co.uk/"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackBookingClick(`Coverage Area - ${currentAreaInfo.name}`)}

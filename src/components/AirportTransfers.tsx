@@ -160,7 +160,7 @@ export default function AirportTransfers() {
               <div className="pt-4 border-t border-slate-200/60 flex items-center justify-between">
                 <span className="text-xs font-semibold text-slate-500">Fixed Fare Route</span>
                 <a
-                  href="https://www.minicabs.co.uk/new-booking"
+                  href="https://www.minicabs.co.uk/"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackBookingClick(`Airport Card - ${airport.name}`)}
@@ -204,7 +204,7 @@ export default function AirportTransfers() {
               </ul>
             </div>
             <a
-              href="https://www.minicabs.co.uk/new-booking"
+              href="https://www.minicabs.co.uk/"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackBookingClick("Meet & Greet Add-on")}
@@ -237,7 +237,7 @@ export default function AirportTransfers() {
           {/* Airport CTA Button */}
           <div className="text-center mt-8 pt-6 border-t border-slate-200">
             <a
-              href="https://www.minicabs.co.uk/new-booking"
+              href="https://www.minicabs.co.uk/"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackBookingClick("Airport Transfer Section CTA")}

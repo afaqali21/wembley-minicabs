@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   Phone,
   MessageSquare,
@@ -11,12 +11,15 @@ import {
   BadgePercent,
   CheckCircle,
   Sparkles,
+  ArrowRight,
+  ExternalLink,
 } from "lucide-react";
-import BookingWidget from "./BookingWidget";
 import VehicleGraphic from "./VehicleGraphic";
 import { trackCallClick, trackWhatsAppClick, trackBookingClick } from "./Analytics";
 
 export default function Hero() {
+  const [selectedVehicle, setSelectedVehicle] = useState<"saloon" | "executive" | "7seater">("executive");
+
   const sellingPoints = [
     {
       icon: BadgePercent,
@@ -46,7 +49,7 @@ export default function Hero() {
   ];
 
   return (
-    <section id="hero" className="relative bg-gradient-to-b from-white via-slate-50 to-white pt-6 md:pt-12 pb-16 overflow-hidden">
+    <section id="hero" className="relative bg-gradient-to-b from-white via-slate-50 to-white pt-8 md:pt-14 pb-16 overflow-hidden">
       {/* Background modern geometric accents */}
       <div className="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 rounded-full bg-[#7bc010]/5 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 -ml-40 -mb-40 w-96 h-96 rounded-full bg-slate-200/50 blur-3xl pointer-events-none" />
@@ -77,23 +80,24 @@ export default function Hero() {
 
             {/* CTAs Bar */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
-              {/* Primary CTA */}
+              {/* Primary CTA: Book on minicabs.co.uk */}
               <a
-                href="https://www.minicabs.co.uk/new-booking"
+                href="https://www.minicabs.co.uk/"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackBookingClick("Hero Main Button")}
-                className="px-6 py-3.5 rounded-xl bg-[#7bc010] hover:bg-[#6ea80e] text-white font-bold text-sm md:text-base shadow-lg shadow-[#7bc010]/30 hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center gap-2"
+                className="px-7 py-4 rounded-xl bg-[#7bc010] hover:bg-[#6ea80e] text-white font-bold text-base shadow-lg shadow-[#7bc010]/30 hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center gap-2.5 cursor-pointer group"
               >
                 <Car className="w-5 h-5" />
                 <span>BOOK YOUR TAXI</span>
+                <ExternalLink className="w-4 h-4 opacity-80 group-hover:translate-x-0.5 transition-transform" />
               </a>
 
-              {/* Secondary CTA */}
+              {/* Secondary CTA: Call */}
               <a
                 href="tel:02082044444"
                 onClick={() => trackCallClick("Hero Secondary Button")}
-                className="px-6 py-3.5 rounded-xl bg-[#0f172a] hover:bg-slate-800 text-white font-bold text-sm md:text-base shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-2"
+                className="px-6 py-4 rounded-xl bg-[#0f172a] hover:bg-slate-800 text-white font-bold text-base shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-2 cursor-pointer"
               >
                 <Phone className="w-5 h-5 text-[#7bc010]" />
                 <span>CALL 0208 204 4444</span>
@@ -105,7 +109,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackWhatsAppClick("Hero Button")}
-                className="px-5 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm md:text-base shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-2"
+                className="px-5 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-2 cursor-pointer"
               >
                 <MessageSquare className="w-5 h-5" />
                 <span>WhatsApp Booking</span>
@@ -159,17 +163,96 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Prominent Booking Widget & Premium Car Presentation */}
-          <div className="lg:col-span-5 space-y-4">
-            <BookingWidget />
-
-            {/* Quick Hero Graphic */}
-            <div className="hidden sm:block bg-gradient-to-r from-slate-900 to-[#1e293b] rounded-2xl p-4 text-white shadow-lg border border-slate-800">
-              <div className="flex items-center justify-between text-xs text-slate-300 mb-1">
-                <span className="font-semibold text-white">Modern Clean Fleet</span>
-                <span className="text-[#7bc010] font-bold">Saloon • Executive • MPV • 8-Seater</span>
+          {/* Right Column: Premium Vehicle Showcase Card (No Booking Engine / Form) */}
+          <div className="lg:col-span-5">
+            <div className="bg-gradient-to-br from-[#0f172a] via-slate-900 to-[#182234] rounded-3xl p-6 sm:p-8 text-white shadow-2xl border border-slate-800 relative overflow-hidden">
+              <div className="flex items-center justify-between pb-4 border-b border-slate-800">
+                <div>
+                  <span className="text-[11px] uppercase tracking-wider font-bold text-[#7bc010] block">
+                    Our Fleet
+                  </span>
+                  <h3 className="text-lg font-bold text-white">Modern Executive Fleet</h3>
+                </div>
+                <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
+                  Fixed Fares
+                </span>
               </div>
-              <VehicleGraphic type="executive" className="w-full h-32 md:h-36 drop-shadow-lg" />
+
+              {/* Vehicle Toggle Pills */}
+              <div className="flex gap-2 my-4">
+                <button
+                  type="button"
+                  onClick={() => setSelectedVehicle("saloon")}
+                  className={`flex-1 py-1.5 px-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                    selectedVehicle === "saloon"
+                      ? "bg-[#7bc010] text-white"
+                      : "bg-slate-800 text-slate-400 hover:text-white"
+                  }`}
+                >
+                  Saloon
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setSelectedVehicle("executive")}
+                  className={`flex-1 py-1.5 px-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                    selectedVehicle === "executive"
+                      ? "bg-[#7bc010] text-white"
+                      : "bg-slate-800 text-slate-400 hover:text-white"
+                  }`}
+                >
+                  Executive
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setSelectedVehicle("7seater")}
+                  className={`flex-1 py-1.5 px-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                    selectedVehicle === "7seater"
+                      ? "bg-[#7bc010] text-white"
+                      : "bg-slate-800 text-slate-400 hover:text-white"
+                  }`}
+                >
+                  7-Seater
+                </button>
+              </div>
+
+              {/* Dynamic Vehicle Graphic */}
+              <div className="py-2 flex items-center justify-center">
+                <VehicleGraphic type={selectedVehicle} className="w-full h-44 drop-shadow-2xl" />
+              </div>
+
+              {/* Quick Info Box */}
+              <div className="grid grid-cols-2 gap-3 pt-4 border-t border-slate-800 text-xs">
+                <div className="bg-slate-800/60 p-3 rounded-xl border border-slate-700/60">
+                  <span className="text-slate-400 block text-[10px] uppercase font-semibold">
+                    London Airports
+                  </span>
+                  <span className="font-bold text-white text-xs mt-0.5 block">
+                    Heathrow, Gatwick, Luton
+                  </span>
+                </div>
+                <div className="bg-slate-800/60 p-3 rounded-xl border border-slate-700/60">
+                  <span className="text-slate-400 block text-[10px] uppercase font-semibold">
+                    Pricing Policy
+                  </span>
+                  <span className="font-bold text-[#7bc010] text-xs mt-0.5 block">
+                    100% Fixed • No Surge
+                  </span>
+                </div>
+              </div>
+
+              {/* Book on minicabs.co.uk CTA */}
+              <div className="pt-5">
+                <a
+                  href="https://www.minicabs.co.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackBookingClick("Hero Fleet Card")}
+                  className="w-full py-3.5 px-4 rounded-xl bg-[#7bc010] hover:bg-[#6ea80e] text-white font-bold text-sm text-center flex items-center justify-center gap-2 shadow-lg shadow-[#7bc010]/20 transition-all cursor-pointer group"
+                >
+                  <span>Book Online at Minicabs.co.uk</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -177,4 +260,3 @@ export default function Hero() {
     </section>
   );
 }
-

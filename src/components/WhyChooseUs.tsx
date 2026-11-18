@@ -133,7 +133,7 @@ export default function WhyChooseUs() {
                 <div className="pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs">
                   <span className="text-slate-400 font-medium">Minicabs UK Ltd</span>
                   <a
-                    href="https://www.minicabs.co.uk/new-booking"
+                    href="https://www.minicabs.co.uk/"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackBookingClick(`Why Choose Us - ${feature.title}`)}
