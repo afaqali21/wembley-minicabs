@@ -93,7 +93,7 @@ export default function Header() {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-7">
+          <nav className="hidden lg:flex items-center gap-4">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -108,7 +108,7 @@ export default function Header() {
           {/* Right Action Buttons (Desktop) */}
           <div className="hidden sm:flex items-center gap-3">
             {/* Call Now */}
-            <a
+            {/* <a
               href="tel:02082044444"
               onClick={() => trackCallClick("Header")}
               className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-slate-200 hover:border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-900 transition-all font-bold text-sm"
@@ -124,7 +124,7 @@ export default function Header() {
                   0208 204 4444
                 </span>
               </div>
-            </a>
+            </a> */}
 
             {/* Book Now Button -> minicabs.co.uk */}
             <a
@@ -134,7 +134,7 @@ export default function Header() {
               onClick={() => trackBookingClick("Header")}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#7bc010] hover:bg-[#6ea80e] text-white font-bold text-sm shadow-md shadow-[#7bc010]/20 hover:shadow-lg transition-all cursor-pointer"
             >
-              <span>Book Now</span>
+              <span>Get Quote</span>
               <ExternalLink className="w-3.5 h-3.5 opacity-80" />
             </a>
           </div>
